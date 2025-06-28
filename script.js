@@ -287,6 +287,18 @@ class UserLocationManager extends MapManager {
         const priceB = parseFloat(b.price) || -Infinity;
         return priceB - priceA;
       });
+  }else if(sortType ==='dichvu'&& sortOrder ==='asc'){
+      locations.sort((a, b) => {
+        const dichvuA = parseFloat(a.giadichvu) || -Infinity; // Đặt giá trị nhỏ nếu price không hợp lệ
+        const dichvuB = parseFloat(b.giadichvu) || -Infinity;
+        return dichvuA - dichvuB;
+      });
+  }else if(sortType==='dichvu'&&sortOrder ==='desc'){
+      locations.sort((a, b) => {
+        const dichvuA = parseFloat(a.giadichvu) || -Infinity; // Đặt giá trị nhỏ nếu price không hợp lệ
+        const dichvuB = parseFloat(b.giadichvu) || -Infinity;
+        return dichvuB - dichvuA;
+      });
     } else {
       // Ngẫu nhiên
       for (let i = locations.length - 1; i > 0; i--) {
@@ -304,6 +316,7 @@ class UserLocationManager extends MapManager {
         <span>${loc.price ? parseFloat(loc.price).toLocaleString('vi-VN') + ' VNĐ' : 'Chưa có giá'}</span>
         <span>${loc.distance ? loc.distance + ' km' : 'N/A'}</span>
         <span>${'★'.repeat(Math.round(loc.rating || 0))}${'☆'.repeat(5 - Math.round(loc.rating || 0))}</span>
+        <span>${loc.giadichvu ? parseFloat(loc.giadichvu).toLocaleString('vi-VN') + ' VNĐ' : 'Chưa có giá1111'}</span>                    
         <button class="directions-btn" onclick="userLocationManager.showRoute(${loc.lat}, ${loc.lng})">Xác định</button>
       `;
       locationList.appendChild(div);
@@ -325,7 +338,7 @@ class UserLocationManager extends MapManager {
     const price = parseInt(document.getElementById("manualPrice").value) || 0;
     const comment = document.getElementById("manualcomment").value.trim();
     const nickname = document.getElementById("manualnickname").value.trim();
-    const diachi=document.getElementById("manualImageUrl1").value.trim();//////
+    const diachi=document.getElementById("manualImageUrl1").value.trim();
     const gmail=document.getElementById("manualImageUrl1").value.trim();
     const sdt=document.getElementById("manualImageUrl1").value.trim();
     const gianha=document.getElementById("manualImageUrl1").value.trim();
@@ -398,7 +411,10 @@ class UserLocationManager extends MapManager {
     document.getElementById("editManualLng").value = lng;
     document.getElementById("editManualMapLink").value= map;
     document.getElementById("editManualImageUrl1").value=image1;
-   document.getElementById("editManualImageUrl2").value=image2;
+   document.getElementById("editManualImageUrl2").value=image
+    document.getElementById("editManualLng").value = lng;
+    document.getElementById("editManualMapLink").value= map;
+    document.getElementById("editManualImageUrl1").value=image12;
     document.getElementById("editManualName").value = name;
     document.getElementById("editManualColor").value = color;
     document.getElementById("editManualIcon").value = iconSymbol;
