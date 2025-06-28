@@ -56,13 +56,14 @@ function displayData(data) {
   // Gán dữ liệu
   document.getElementById('Hi').innerHTML = `<p>${icon}  ${name}</p>`;
   document.getElementById('Hi1').src = imageUrl;
+  document.getElementById('Hi11').src = imageUrl;
   document.getElementById('Hi2').src = image1;
   document.getElementById('Hi3').src = image2;
   document.getElementById('diachi').innerHTML = `<p><strong>Địa chỉ:</strong> ${diachi}</p>`;
   document.getElementById('gmail').innerHTML = `<p><strong>Gmail:</strong> ${gmail}</p>`;
   document.getElementById('gianha').innerHTML = `<p><strong>Giá thuê:</strong> ${gianha}</p>`;
   document.getElementById('node').innerHTML = node;
-  document.getElementById('sdt').href = sdt;
+  document.getElementById('sdt').innerHTML = sdt;
   document.getElementById('sdt').innerHTML = `📞 ${sdt}`;
 }
 
@@ -121,3 +122,4 @@ function loadComments() {
       commentList.innerHTML = "<p>Lỗi khi tải bình luận.</p>";
     });
 }
+
