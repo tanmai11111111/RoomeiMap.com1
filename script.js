@@ -189,11 +189,10 @@ class MapManager {
           const popupContent = `
             <div>
               <strong><h1>${m.icon} ${m.name}</h1></strong><br>
-              <strong>Giá điện:</strong> ${m.price ? m.price.toLocaleString('vi-VN') + ' VNĐ' : 'Chưa có giá'}<br>
+              <strong>Giá Tiền:</strong> ${m.price ? m.price.toLocaleString('vi-VN') + ' VNĐ' : 'Chưa có giá'}<br>
               <strong>Đánh giá:</strong> ${'★'.repeat(Math.round(m.rating || 0))}${'☆'.repeat(5 - Math.round(m.rating || 0))}<br>
               <a href="${m.map}">Googlemap</a>
               <img src="${m.imageUrl}" alt="${m.name}" style="max-width: 60%; height: auto;"><br>
-                        
               <button onclick="reloadandnew1('${id}')">Thông tin trọ:</button>
             </div>
           `;
