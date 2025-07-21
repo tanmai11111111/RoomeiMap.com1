@@ -4,13 +4,14 @@ let markerId;
 document.addEventListener('DOMContentLoaded', () => {
   // Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyBuHHTyO2ZXILBRQQdlMlZfULeHZr-8AvA",
-    authDomain: "dsfsdfdsf-3c8a5.firebaseapp.com",
-    databaseURL: "https://dsfsdfdsf-3c8a5-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "dsfsdfdsf-3c8a5",
-    storageBucket: "dsfsdfdsf-3c8a5.appspot.com",
-    messagingSenderId: "411721034812",
-    appId: "1:411721034812:web:1f2a264f09113ee9ede739"
+    apiKey: "AIzaSyBEEQM-uaqT0nx3geaCkUS_N1QSHHvUe4M",
+  authDomain: "sadasdk-f657b.firebaseapp.com",
+  projectId: "sadasdk-f657b",
+  storageBucket: "sadasdk-f657b.firebasestorage.app",
+  messagingSenderId: "89987716649",
+  appId: "1:89987716649:web:fe105ac15cd3a67258ee38",
+  measurementId: "G-Q3REQ1J2BT",
+  databaseURL: "https://sadasdk-f657b-default-rtdb.asia-southeast1.firebasedatabase.app"
   };
 
   // Initialize Firebase
